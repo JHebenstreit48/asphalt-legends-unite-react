@@ -17,7 +17,9 @@ export default function CarsByClass() {
 
     useEffect(() => {
         console.log("Selected class:", selectedClass); // Debug log
-        fetch(`/api/cars/${selectedClass}`)
+
+        // Fetch cars based on selected class using .then and .catch
+        fetch(`http://localhost:3001/api/cars/${selectedClass}`)
             .then((response) => {
                 console.log("Fetch response:", response); // Debug log
                 if (!response.ok) {
