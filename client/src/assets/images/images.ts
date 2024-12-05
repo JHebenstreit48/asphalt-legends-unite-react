@@ -68,7 +68,7 @@ import DodgeViperACR from "../car-photos/dodge-viper-acr.jpg";
 
 import DodgeViperGTS from "../car-photos/dodge-viper-gts.jpg";
 
-import DrokoGTE from "../car-photos/drako-gte.jpg";
+import DrakoGTE from "../car-photos/drako-gte.jpg";
 
 import DSETense from "../car-photos/ds-e-tense.jpg";
 
@@ -315,7 +315,7 @@ export const Images: Record<string, string> = {
 
   DodgeViperGTS,
 
-  DrokoGTE,
+  DrakoGTE,
 
   DSETense,
 
