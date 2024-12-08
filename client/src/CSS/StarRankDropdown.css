@@ -1,0 +1,40 @@
+/* Dropdown selector styles */
+.starRankSelector {
+    height: 2rem; /* Matches height from LegendStore.css */
+    width: 100%; /* Ensure dropdown width adapts to its container */
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    box-sizing: border-box; /* Prevent padding from affecting width */
+    appearance: none; /* Retain native dropdown arrow */
+  }
+  
+  /* Styling for dropdown options */
+  .starRankSelector option {
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem;
+  }
+  
+  /* Add star icons to options using pseudo-elements */
+  .starRankSelector option[data-stars]:before {
+    content: "";
+    display: inline-block;
+    width: 16px; /* Icon size */
+    height: 16px; /* Icon size */
+    margin-right: 8px; /* Space between icon and text */
+    background-image: url("https://img.icons8.com/?size=100&id=8ggStxqyboK5&format=png&color=000000");
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+  }
+  
+  /* Spacing for star options */
+  .starRankSelector option {
+    padding-left: 24px; /* Ensure space for icons */
+  }
+  
