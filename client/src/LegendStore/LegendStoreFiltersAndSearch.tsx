@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction, useState, useEffect } from "react";
 import "../CSS/LegendStore.css";
-import StarRankDropdown from "./StarRankDropdown"; // Import the new Star Rank component
 
 const LegendStoreFilters: React.FC<{
   onFiltersChange: Dispatch<
@@ -24,13 +23,19 @@ const LegendStoreFilters: React.FC<{
     localStorage.getItem("searchTerm") || ""
   );
   const [selectedCumulativeLevel, setSelectedCumulativeLevel] = useState<number | null>(() =>
-    localStorage.getItem("selectedCumulativeLevel") ? Number(localStorage.getItem("selectedCumulativeLevel")) : null
+    localStorage.getItem("selectedCumulativeLevel")
+      ? Number(localStorage.getItem("selectedCumulativeLevel"))
+      : null
   );
   const [selectedIndividualLevel, setSelectedIndividualLevel] = useState<number | null>(() =>
-    localStorage.getItem("selectedIndividualLevel") ? Number(localStorage.getItem("selectedIndividualLevel")) : null
+    localStorage.getItem("selectedIndividualLevel")
+      ? Number(localStorage.getItem("selectedIndividualLevel"))
+      : null
   );
   const [selectedStarRank, setSelectedStarRank] = useState<number | null>(() =>
-    localStorage.getItem("selectedStarRank") ? Number(localStorage.getItem("selectedStarRank")) : null
+    localStorage.getItem("selectedStarRank")
+      ? Number(localStorage.getItem("selectedStarRank"))
+      : null
   );
 
   useEffect(() => {
@@ -98,10 +103,22 @@ const LegendStoreFilters: React.FC<{
 
       <label className="DropdownLabel">
         Star Rank:
-        <StarRankDropdown
-          selectedStarRank={selectedStarRank}
-          onChange={(rank) => setSelectedStarRank(rank)}
-        />
+        <select
+          className="dropdownSelector"
+          value={selectedStarRank !== null ? selectedStarRank : ""}
+          onChange={(e) =>
+            setSelectedStarRank(
+              e.target.value ? parseInt(e.target.value, 10) : null
+            )
+          }
+        >
+          <option value="">All Ranks</option>
+          {[3, 4, 5, 6].map((rank) => (
+            <option key={rank} value={rank}>
+              {`${rank} Stars`}
+            </option>
+          ))}
+        </select>
       </label>
 
       <label className="DropdownLabel">
